@@ -1,0 +1,36 @@
+
+Factors That Affect Insurance Rates:
+
+Age
+Gender
+Education
+Marital Status
+Address
+Occupation
+Driving Experience/Record
+Claims History
+Credit score/history
+Car make/model/year and new/used status
+Bells and whistles (sound systems, security systems, and other fancy shit)
+
+
+Factors That Affect Leasing/Renting Terms/Rates:
+
+Age
+Driving history
+Credit score/history
+
+
+Factors That Affect Loan Amount/Rates:
+
+Occupation
+Income
+Credit score/history
+Car make/model/year and new/used status
+
+
+Factors That Affect Resale Value:
+
+Car mileage and condition
+Car history (accidents, etc.)
+Make/Mode/Year
