@@ -2,6 +2,10 @@ body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 ul.sidenav {
     list-style-type: none;
     margin: 0;
@@ -35,6 +39,60 @@ div.content {
     padding: 1px 16px;
     height: 1000px;
 }
+
+
+/*car image*/
+
+#CarImage {
+    height: auto;
+}
+
+#left-content {
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+#right-content {
+    margin-top: 1em;
+    padding-right: 10%;
+}
+
+
+/* Search Bar*/
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* top nav */
 
 @media screen and (max-width: 900px) {
     ul.sidenav {
