@@ -25,6 +25,25 @@
     />
 
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Centers iframe in the middle of the page, makes it responsive and sets up control through dropdown menu -->
+
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height =
+          obj.contentWindow.document.documentElement.scrollHeight + "em";
+      }
+    </script>
+
+    <script type="text/javascript">
+      function setIframeSource() {
+        var theSelect = document.getElementById("location");
+        var theIframe = document.getElementById("myIframe");
+        var theUrl;
+        theUrl = theSelect.options[theSelect.selectedIndex].value;
+        theIframe.src = theUrl;
+      }
+    </script>
   </head>
 
   <body>
@@ -58,10 +77,7 @@
                 >
               </li>
               <li class="nav-item mx-2">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./owner.html"
+                <a class="nav-link" aria-current="page" href="./owner.html"
                   >Owner</a
                 >
               </li>
@@ -86,56 +102,43 @@
         </div>
       </nav>
 
-      <main>
-        <h1 class="mt-3 text-center">Owner Info</h1>
+      <main class="">
+        <div class="row mt-4 text-center">
+          <h1>Title Information</h1>
+        </div>
         <hr class="featurette-divider" />
-
-        <h2 class="bg-dark text-white text-center">
-          Jane Doe's Current Titles
-        </h2>
-        <div class="row featurette text-center">
-          <div class="col-md-4 order-md-1">
-            <img
-              src="./images/tesla3.jpg"
-              alt="This is a image of badminton"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-8 order-md-2 align-self-center">
-            <div class="right-content">
-              <p>Make: Tesla</p>
-              <p>Model: Model 3</p>
-              <p>Year: 2021</p>
-              <p>Status: Clean</p>
-              <p>Insurance: Geico</p>
-            </div>
-          </div>
+        <div class="table-responsive">
+          <center>
+            <h2>Search by owner:</h2>
+            <select id="location" onchange="setIframeSource()">
+              <option value="./documents/Xin_Test.txt">Xin Zhang</option>
+              <option value="./documents/Randy_Test.txt">Randy Randall</option>
+              <option value="./documents/Robin_Test.txt">Robin Purvis</option>
+              <option value="./documents/Will_Test.txt">Will Jeanniton</option>
+              <option value="./documents/Jane_Doe_Test.txt">Jane Doe</option>
+              <option value="./documents/John_Doe_Test.txt">John Doe</option>
+              <option
+                value="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eab6cc47-e9ea-4310-88ed-ba829f8f32f1/d8wzxw6-7ac66e52-ffe0-4f64-b8de-84ec64e46d49.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWFiNmNjNDctZTllYS00MzEwLTg4ZWQtYmE4MjlmOGYzMmYxXC9kOHd6eHc2LTdhYzY2ZTUyLWZmZTAtNGY2NC1iOGRlLTg0ZWM2NGU0NmQ0OS5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.6eAllobdbv4mVkCTRzsshOIzNah3sC-JOo2-EajeTmg"
+              >
+                Batman
+              </option>
+            </select>
+          </center>
         </div>
-
-        <h2 class="bg-dark text-white text-center">
-          Jane Doe's Previous Titles
-        </h2>
-        <div class="row featurette text-center">
-          <div class="col-md-4 order-md-1">
-            <img
-              src="./images/kiaspectra.jpg"
-              alt="This is a image of badminton"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-8 order-md-2 align-self-center">
-            <div class="right-content">
-              <p>Make: Tesla</p>
-              <p>Model: Model 3</p>
-              <p>Year: 2021</p>
-              <p>Status: Clean</p>
-              <p>Insurance: Geico</p>
-              <p>Current Owner: <a href="#">John Doe</a></p>
-            </div>
-          </div>
+        <div>
+          <p align="center">
+            <iframe
+              id="myIframe"
+              src="./documents/title_test.txt"
+              frameborder="0"
+              scrolling="yes"
+              onload="resizeIframe(this)"
+              width="300"
+              height="300"
+            >
+            </iframe>
+          </p>
         </div>
-
-        <!-- Site footer -->
         <footer class="site-footer mt-5 p-md-3">
           <div>
             <div class="row">
