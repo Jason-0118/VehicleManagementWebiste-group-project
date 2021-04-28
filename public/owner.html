@@ -21,7 +21,7 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-md-top py-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
             <div class="container-fluid">
                 <fieldset>
                     <button class="navbar-toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse"
@@ -31,12 +31,13 @@
                 </fieldset>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2">
-                        <li class="nav-item mx-2"><a class="nav-link border-white active" aria-current="page"
+                        <li class="nav-item mx-2"><a class="nav-link border-white " aria-current="page"
                                 href="./index.html">Home</a>
                         </li>
                         <li class="nav-item mx-2"><a class="nav-link" aria-current="page" href="#">Status</a>
                         </li>
-                        <li class="nav-item mx-2"><a class="nav-link" aria-current="page" href="./owner.html">Owner</a>
+                        <li class="nav-item mx-2"><a class="nav-link active" aria-current="page"
+                                href="./owner.html">Owner</a>
                         </li>
                         <li class="nav-item mx-2"><a class="nav-link " aria-current="page"
                                 href="./insurance.html">Insurance</a>
@@ -50,25 +51,42 @@
             </div>
         </nav>
 
-        <main class="row mt-4">
-            <div class="content">
-                <div id="left-content">
-                    <img id="CarImage" src="./images/car.jpg" alt="Car">
+        <main>
+            <h1 class="mt-3 text-center">Owner Info</h1>
+            <hr class="featurette-divider">
+
+            <h2 class="bg-dark text-white text-center">Jane Doe's Current Titles</h2>
+            <div class="row featurette text-center">
+                <div class="col-md-4 order-md-1">
+                    <img src="./images/tesla3.jpg" alt="This is a image of badminton" class="img-fluid">
                 </div>
-                <div class="text-center" id="right-content">
-                    <h1 class="text-decoration-underline">Vehicle</h1>
-                    <p><a class="text-decoration-none" href="">Make</a></p>
-                    <p><a class="text-decoration-none" href="">Model</a></p>
-                    <p><a class="text-decoration-none" href="">Year</a></p>
-                    <p><a class="text-decoration-none" href="">Odometer</a></p>
-                    <h2 class="text-decoration-underline">Attached data</h2>
-                    <p>Status</p>
-                    <p>Model</p>
-                    <p>Title</p>
-                    <p>Insurance</p>
+                <div class="col-md-8 order-md-2 align-self-center">
+                    <div class="right-content">
+                        <p>Make: Tesla</p>
+                        <p>Model: Model 3</p>
+                        <p>Year: 2021</p>
+                        <p>Status: Clean</p>
+                        <p>Insurance: Geico</p>
+                    </div>
                 </div>
             </div>
 
+            <h2 class="bg-dark text-white text-center">Jane Doe's Previous Titles</h2>
+            <div class="row featurette text-center">
+                <div class="col-md-4 order-md-1">
+                    <img src="./images/kiaspectra.jpg" alt="This is a image of badminton" class="img-fluid">
+                </div>
+                <div class="col-md-8 order-md-2 align-self-center">
+                    <div class="right-content">
+                        <p>Make: Tesla</p>
+                        <p>Model: Model 3</p>
+                        <p>Year: 2021</p>
+                        <p>Status: Clean</p>
+                        <p>Insurance: Geico</p>
+                        <p>Current Owner: <a href="#">John Doe</a></p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Site footer -->
             <footer class="site-footer mt-5 p-md-3">
@@ -146,10 +164,8 @@
                 </div>
             </footer>
         </main>
-
     </div>
 
 </body>
-
 
 </html>
