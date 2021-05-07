@@ -7,7 +7,6 @@ body {
 }
 
 
-
 /*car image*/
 
 #CarImage {
@@ -26,8 +25,48 @@ body {
     padding-right: 10%;
 }
 
+.content {
+    background-color: rgb(173, 173, 173);
+    font-family: var(--tds-base-font_family, system);
+}
 
+.all {
+    background-color: rgb(255, 255, 255);
+    font-size: 170%;
+    font-family: 'Antonio', sans-serif;
+}
 
+#tablecar {
+    font-family: 'Antonio', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tablecar td,
+#tablecar th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tablecar tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tablecar tr:hover {
+    background-color: #ddd;
+}
+
+#tablecar th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ffffff;
+    color: white;
+}
+
+#header1 {
+    font-size: 190%;
+}
 
 
 /* footer*/
