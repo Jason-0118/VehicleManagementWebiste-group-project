@@ -3,11 +3,12 @@ const Schema = mongoose.Schema;
 
 var InsuranceSchema = new Schema({
   name: {type: String},
-  planIDNumber: {type: Number},
-  payment: {type: Number},
-  mileage: {type: String},
-  startingDate: {type: String},
-  endingDate: {type: String}
+  founder: {type: String},
+  headquarter: {type: String},
+  rank: {type: String},
+  website: {type: String},
+  formed: {type: Date},
+  active: { type: Boolean, required: true, default: true }
   //will have reference to owner and array of cars on insurance policy
 });
 
