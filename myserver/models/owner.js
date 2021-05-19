@@ -7,7 +7,10 @@ var OwnerSchema = new Schema({
   age: { type: Number },
   insuranceID: { type: Schema.Types.ObjectId, ref: "Insurance" },
   insuranceDetailID: { type: Schema.Types.ObjectId, ref: "InsuranceDetail" },
-  carID: { type: Schema.Types.ObjectId, ref: "Car" },
+  carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
+  phoneNumber: { type: String },
+  gender: { type: String },
+  dateOfBirth: { type: String},
 });
 
 //Export model

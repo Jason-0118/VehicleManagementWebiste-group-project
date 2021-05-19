@@ -55,14 +55,29 @@ var personInfo = [
       name: "Xin Zhang",
       address: "123 XinZhang St, Salem OR 97305",
       age: 26,
+      phoneNumber: "123-456-7890",
+      dateOfBirth: "01/01/2000",
+      gender: "male",
     },
     //car info
-    car: {
+    cars: [{
       make: "Honda",
       mode: "Civic EX-T",
       year: 2019,
       mileage: 8000
     },
+    {
+      make: "Honda",
+      mode: "Civic EX-T",
+      year: 2019,
+      mileage: 8000
+    },
+    {
+      make: "Honda",
+      mode: "Civic EX-T",
+      year: 2019,
+      mileage: 8000
+    }],
     //insurance info
     insurance: {
       name: "Geico",
@@ -88,14 +103,29 @@ var personInfo = [
       name: "Randy",
       address: "123 Randy St, Salem OR 97305",
       age: 18,
+      phoneNumber: "123-456-7890",
+      dateOfBirth: "01/01/2000",
+      gender: "male",
     },
     //car info
-    car: {
+    cars: [{
       make: "Tesla",
       mode: "X",
       year: 2020,
       mileage: 1000
     },
+    {
+      make: "Tesla",
+      mode: "X",
+      year: 2020,
+      mileage: 1000
+    },
+    {
+      make: "Tesla",
+      mode: "X",
+      year: 2020,
+      mileage: 1000
+    }],
     //insurance info
     insurance: {
       name: "State Farm",
@@ -121,14 +151,29 @@ var personInfo = [
       name: "Robin",
       address: "123 Robin St, Salem OR 97305",
       age: 18,
+      phoneNumber: "123-456-7890",
+      dateOfBirth: "01/01/2000",
+      gender: "female",
     },
     //car info
-    car: {
+    cars: [{
       make: "Tesla",
       mode: "X",
       year: 2020,
-      mileage: 2000
+      mileage: 1000
     },
+    {
+      make: "Tesla",
+      mode: "X",
+      year: 2020,
+      mileage: 1000
+    },
+    {
+      make: "Tesla",
+      mode: "X",
+      year: 2020,
+      mileage: 1000
+    }],
     //insurance info
     insurance: {
       name: "Progressive",
@@ -220,15 +265,22 @@ async function loadAllRecords() {
   for (let item of personInfo) {
     const newOwner = new Owner(item.owner);
     const newInsuranceDetail = new InsuranceDetail(item.insurance);
-    const newCar = new Car(item.car);
 
     //refer each other
     newOwner.insuranceDetailID = newInsuranceDetail;
-    newOwner.carID = newCar;
     newInsuranceDetail.ownerID = newOwner;
-    newInsuranceDetail.carID = newCar;
-    newCar.insuranceDetailID = newInsuranceDetail;
-    newCar.ownerID = newOwner;
+
+    //read in car info for owner and insurance
+    for(let i = 0; i < item.cars.length; i++){
+      let newCar = new Car(item.cars[i]);
+      newOwner.carID[i] = newCar;
+      newInsuranceDetail.carID[i] = newCar;
+      newCar.insuranceDetailID = newInsuranceDetail;
+      newCar.ownerID = newOwner;
+
+      //store in DB
+      await newCar.save();
+    }
 
     if (item.insurance.name === "State Farm") {
       newOwner.insuranceID = insuranceRecords[0];
@@ -243,7 +295,7 @@ async function loadAllRecords() {
     //store in DB
     await newOwner.save();
     await newInsuranceDetail.save();
-    await newCar.save();
+    // await newCar.save();
   }
   console.log("load car insuranceDetail and owner");
 

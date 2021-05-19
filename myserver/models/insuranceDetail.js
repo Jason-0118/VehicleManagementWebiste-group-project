@@ -15,7 +15,7 @@ var InsuranceDetailSchema = new Schema({
     collision: { type: String },
     comprehensive: { type: String },
     ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
-    carID: { type: Schema.Types.ObjectId, ref: "Car" },
+    carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
 });
 
 //Export model
