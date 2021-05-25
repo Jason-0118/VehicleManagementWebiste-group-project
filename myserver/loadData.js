@@ -1,198 +1,844 @@
-// let insurance = [
-//     {
-//         name: "Geico",
-//         payment: 150,
-//         // owner: (reference to owner)
-//         startingDate: "01/01/2021",
-//         endingDate: "07/01/2021",
-//         planIDNumber: 374502,  
-//     },
-//     {
-//         name: "Geico",
-//         payment: 150,
-//         // owner: (reference to owner)
-//         startingDate: "01/01/2021",
-//         endingDate: "07/01/2021",
-//         planIDNumber: 374502,  
-//     }
-// ]
-
-// let owner = [
-//     {
-//         name: "Robin Purvis",
-//         address: "123 2nd St, Salem OR 97304",
-//         age: 22,
-//       //  titles: []
-//     },
-//     {
-//         name: "Robin Purvis",
-//         address: "123 2nd St, Salem OR 97304",
-//         age: 22,
-//     }
-// ]
-
-// let car = [
-//     {
-//         make: "Tesla",
-//         model: "X",
-//         year: 2021,
-//         mileage: 0,
-//         // owner: (reference to owner)
-//     },
-//     {
-//         make: "Tesla",
-//         model: "X",
-//         year: 2021,
-//         mileage: 0,
-//         // owner: (reference to owner)
-//     }
-// ]
-
 var personInfo = [
   {
-    //owner info start
     owner: {
-      name: "Xin Zhang",
-      address: "123 XinZhang St, Salem OR 97305",
-      age: 26,
-      phoneNumber: "123-456-7890",
-      dateOfBirth: "01/01/2000",
-      gender: "male",
+      "first_name": "Amandie",
+      "last_name": "Basso",
+      "gender": "Bigender",
+      "age": 23,
+      "address": "1452 Di Loreto Alley",
+      "state": "GA",
+      "zipcode": "30356",
+      "phone": "404-101-7422"
     },
-    //car info
-    cars: [{
-      make: "Honda",
-      mode: "Civic EX-T",
-      year: 2019,
-      mileage: 8000
-    },
-    {
-      make: "Honda",
-      mode: "Civic EX-T",
-      year: 2019,
-      mileage: 8000
-    },
-    {
-      make: "Honda",
-      mode: "Civic EX-T",
-      year: 2019,
-      mileage: 8000
-    }],
-    //insurance info
-    insurance: {
-      name: "Geico",
-      payment: "$100",
-      startingDate: "01/01/2021",
-      endingDate: "07/01/2021",
-      policyNum: 4610535224,
-      //for other
-      BIL: "$50,000/$100,000", //bodily injury liability
-      PDL: "$25,000", //property damage liability
-      //for self
-      PIP: "Non Deductible", //personal injury protection
-      UMBI: "$25,000/$50,000", //uninsured motorist bodily injury
-      //for car
-      UMPD: "$20,000", //uninsured motorist property damage
-      collision: "$500",
-      comprehensive: "$500 Ded",
+    car: [
+      {
+        "vin": "JN1BY1PPXFM326743",
+        "make": "Toyota",
+        "model": "Camry Solara",
+        "year": 2007,
+        "mileage": 71662
+      },
+      {
+        "vin": "2G4WF551941038615",
+        "make": "Ford",
+        "model": "Escort ZX2",
+        "year": 2003,
+        "mileage": 41935
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$87.84",
+      "ins_s_date": "12/5/2020",
+      "ins_e_date": "6/23/2021",
+      "ins_policy": "53-319-5739",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
     }
   },
   {
-    //owner info start
     owner: {
-      name: "Randy",
-      address: "123 Randy St, Salem OR 97305",
-      age: 18,
-      phoneNumber: "123-456-7890",
-      dateOfBirth: "01/01/2000",
-      gender: "male",
+      "first_name": "Godard",
+      "last_name": "Ajam",
+      "gender": "Male",
+      "age": 23,
+      "address": "6 Sheridan Pass",
+      "state": "MO",
+      "zipcode": "65110",
+      "phone": "573-900-0358"
     },
-    //car info
-    cars: [{
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    },
-    {
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    },
-    {
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    }],
-    //insurance info
-    insurance: {
-      name: "State Farm",
-      payment: "$150",
-      startingDate: "01/01/2021",
-      endingDate: "07/01/2021",
-      policyNum: 9687535224,
-      //for other
-      BIL: "$50,000/$100,000", //bodily injury liability
-      PDL: "$25,000", //property damage liability
-      //for self
-      PIP: "Non Deductible", //personal injury protection
-      UMBI: "$25,000/$50,000", //uninsured motorist bodily injury
-      //for car
-      UMPD: "$20,000", //uninsured motorist property damage
-      collision: "$500",
-      comprehensive: "$500 Ded",
+    car: [
+      {
+        "vin": "WAUJT54B02N555473",
+        "make": "Hyundai",
+        "model": "Tiburon",
+        "year": 1999,
+        "mileage": 22698
+      },
+      {
+        "vin": "2C3CDXHG2DH151794",
+        "make": "Mazda",
+        "model": "MX-3",
+        "year": 1995,
+        "mileage": 92919
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$230.99",
+      "ins_s_date": "12/26/2020",
+      "ins_e_date": "6/14/2021",
+      "ins_policy": "13-747-5190",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
     }
   },
   {
-    //owner info start
     owner: {
-      name: "Robin",
-      address: "123 Robin St, Salem OR 97305",
-      age: 18,
-      phoneNumber: "123-456-7890",
-      dateOfBirth: "01/01/2000",
-      gender: "female",
+      "first_name": "Ailee",
+      "last_name": "Haddock",
+      "gender": "Male",
+      "age": 24,
+      "address": "8109 Dayton Plaza",
+      "state": "TX",
+      "zipcode": "78783",
+      "phone": "512-900-6022"
     },
-    //car info
-    cars: [{
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    },
-    {
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    },
-    {
-      make: "Tesla",
-      mode: "X",
-      year: 2020,
-      mileage: 1000
-    }],
-    //insurance info
-    insurance: {
-      name: "Progressive",
-      payment: "$120",
-      startingDate: "01/01/2021",
-      endingDate: "07/01/2021",
-      policyNum: 7610554224,
-      //for other
-      BIL: "$50,000/$100,000", //bodily injury liability
-      PDL: "$25,000", //property damage liability
-      //for self
-      PIP: "Non Deductible", //personal injury protection
-      UMBI: "$25,000/$50,000", //uninsured motorist bodily injury
-      //for car
-      UMPD: "$20,000", //uninsured motorist property damage
-      collision: "$500",
-      comprehensive: "$500 Ded",
+    car: [
+      {
+        "vin": "1J4NF1GB3BD721629",
+        "make": "Volvo",
+        "model": "S80",
+        "year": 2000,
+        "mileage": 78067
+      },
+      {
+        "vin": "1FBNE3BL6AD907752",
+        "make": "Nissan",
+        "model": "240SX",
+        "year": 1996,
+        "mileage": 45419
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$284.47",
+      "ins_s_date": "12/6/2020",
+      "ins_e_date": "6/18/2021",
+      "ins_policy": "93-355-3952",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
     }
   },
+  {
+    owner: {
+      "first_name": "Dana",
+      "last_name": "Blancowe",
+      "gender": "Female",
+      "age": 22,
+      "address": "80041 Mariners Cove Crossing",
+      "state": "MO",
+      "zipcode": "64199",
+      "phone": "816-491-6319"
+    },
+    car: [
+      {
+        "vin": "2HNYD18716H053223",
+        "make": "Mercury",
+        "model": "Grand Marquis",
+        "year": 2002,
+        "mileage": 35395
+      },
+      {
+        "vin": "3VW1K7AJ9CM410308",
+        "make": "Lincoln",
+        "model": "MKX",
+        "year": 2011,
+        "mileage": 37520
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$172.46",
+      "ins_s_date": "12/7/2020",
+      "ins_e_date": "6/3/2021",
+      "ins_policy": "55-788-1002",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Wolfy",
+      "last_name": "Okenden",
+      "gender": "Male",
+      "age": 20,
+      "address": "0 Briar Crest Way",
+      "state": "NC",
+      "zipcode": "27499",
+      "phone": "336-891-1545"
+    },
+    car: [
+      {
+        "vin": "SCFAB02A46G139649",
+        "make": "Chevrolet",
+        "model": "Express 1500",
+        "year": 2012,
+        "mileage": 92577
+      },
+      {
+        "vin": "5J8TB4H56DL429499",
+        "make": "Volvo",
+        "model": "940",
+        "year": 1992,
+        "mileage": 70502
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$287.34",
+      "ins_s_date": "12/14/2020",
+      "ins_e_date": "6/26/2021",
+      "ins_policy": "15-417-0674",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Dolph",
+      "last_name": "Edmonston",
+      "gender": "Non-binary",
+      "age": 18,
+      "address": "008 Havey Point",
+      "state": "FL",
+      "zipcode": "32854",
+      "phone": "407-129-0019"
+    },
+    car: [
+      {
+        "vin": "WP0AA2A95ES229165",
+        "make": "Honda",
+        "model": "Pilot",
+        "year": 2004,
+        "mileage": 78106,
+      },
+      {
+        "vin": "WAUEH98E37A565489",
+        "make": "Mercedes-Benz",
+        "model": "CL-Class",
+        "year": 2010,
+        "mileage": 14910,
+      }
+    ],
+    ins: {
+      "ins_name": "Progressive",
+      "ins_payment": "$196.99",
+      "ins_s_date": "12/1/2020",
+      "ins_e_date": "6/12/2021",
+      "ins_policy": "53-138-6816",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Tani",
+      "last_name": "Stanney",
+      "gender": "Non-binary",
+      "age": 23,
+      "address": "1 Kedzie Parkway",
+      "state": "TX",
+      "zipcode": "78470",
+      "phone": "361-589-6085"
+    },
+    car: [
+      {
+        "vin": "WAUHF98P49A422333",
+        "make": "Dodge",
+        "model": "Neon",
+        "year": 2001,
+        "mileage": 50682
+      },
+      {
+        "vin": "3VWML7AJ6DM331321",
+        "make": "Mercedes-Benz",
+        "model": "SL-Class",
+        "year": 1993,
+        "mileage": 120626
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$119.90",
+      "ins_s_date": "12/13/2020",
+      "ins_e_date": "6/23/2021",
+      "ins_policy": "64-518-5904",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Devi",
+      "last_name": "Grundell",
+      "gender": "Polygender",
+      "age": 19,
+      "address": "4 Myrtle Street",
+      "state": "OK",
+      "zipcode": "73135",
+      "phone": "405-868-0754"
+    },
+    car: [
+      {
+        "vin": "WAUXD68D42A275748",
+        "make": "Ford",
+        "model": "Courier",
+        "year": 1989,
+        "mileage": 83881
+      },
+      {
+        "vin": "WBA3C1C57EK224487",
+        "make": "Acura",
+        "model": "TL",
+        "year": 1997,
+        "mileage": 62885
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$228.99",
+      "ins_s_date": "12/25/2020",
+      "ins_e_date": "6/20/2021",
+      "ins_policy": "66-848-8957",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Garrot",
+      "last_name": "Allberry",
+      "gender": "Agender",
+      "age": 22,
+      "address": "82310 Sommers Place",
+      "state": "CO",
+      "zipcode": "80126",
+      "phone": "303-894-8890"
+    },
+    car: [
+      {
+        "vin": "5NPDH4AE3BH768735",
+        "make": "Oldsmobile",
+        "model": "Bravada",
+        "year": 1996,
+        "mileage": 132345
+      },
+      {
+        "vin": "WA1DKAFP4CA661416",
+        "make": "Jeep",
+        "model": "Grand Cherokee",
+        "year": 2005,
+        "mileage": 67005
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$247.94",
+      "ins_s_date": "12/28/2020",
+      "ins_e_date": "6/29/2021",
+      "ins_policy": "33-033-6286",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Hermann",
+      "last_name": "Wattingham",
+      "gender": "Genderfluid",
+      "age": 23,
+      "address": "36 Reindahl Terrace",
+      "state": "OH",
+      "zipcode": "45414",
+      "phone": "937-323-1401"
+    },
+    car: [
+      {
+        "vin": "1FMCU4K30AK513344",
+        "make": "Chrysler",
+        "model": "PT Cruiser",
+        "year": 2008,
+        "mileage": 73905
+      },
+      {
+        "vin": "WAUMR44E25N964322",
+        "make": "GMC",
+        "model": "Sierra 3500",
+        "year": 2009,
+        "mileage": 127095
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$94.53",
+      "ins_s_date": "12/25/2020",
+      "ins_e_date": "6/16/2021",
+      "ins_policy": "92-835-3937",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Merwin",
+      "last_name": "Chinery",
+      "gender": "Polygender",
+      "age": 23,
+      "address": "39378 Delladonna Parkway",
+      "state": "MA",
+      "zipcode": "02119",
+      "phone": "508-995-4015"
+    },
+    car: [
+      {
+        "vin": "WA1CGBFE9CD159341",
+        "make": "Mazda",
+        "model": "Miata MX-5",
+        "year": 2006,
+        "mileage": 135359
+      },
+      {
+        "vin": "5XXGM4A74CG599381",
+        "make": "Hummer",
+        "model": "H1",
+        "year": 1999,
+        "mileage": 41830
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$148.45",
+      "ins_s_date": "12/17/2020",
+      "ins_e_date": "6/8/2021",
+      "ins_policy": "66-159-8143",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Brendis",
+      "last_name": "Midson",
+      "gender": "Genderfluid",
+      "age": 25,
+      "address": "54 Manitowish Plaza",
+      "state": "MA",
+      "zipcode": "01152",
+      "phone": "413-281-7886"
+    },
+    car: [
+      {
+        "vin": "1FMEU8FE2AU156877",
+        "make": "Ferrari",
+        "model": "458 Italia",
+        "year": 2010,
+        "mileage": 122121
+      },
+      {
+        "vin": "WAUPEBFM2CA324505",
+        "make": "Mazda",
+        "model": "B-Series Plus",
+        "year": 1995,
+        "mileage": 134925
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$182.60",
+      "ins_s_date": "12/21/2020",
+      "ins_e_date": "6/6/2021",
+      "ins_policy": "01-990-9587",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Ellynn",
+      "last_name": "Jasper",
+      "gender": "Bigender",
+      "age": 25,
+      "address": "469 Russell Plaza",
+      "state": "MO",
+      "zipcode": "63196",
+      "phone": "314-847-0543"
+    },
+    car: [
+      {
+        "vin": "1G6DP567250596544",
+        "make": "Mazda",
+        "model": "929",
+        "year": 1991,
+        "mileage": 124859
+      },
+      {
+        "vin": "2C3CK6CT5BH546876",
+        "make": "Ford",
+        "model": "E-Series",
+        "year": 2002,
+        "mileage": 82779
+      }
+    ],
+    ins: {
+      "ins_name": "Geico",
+      "ins_payment": "$159.37",
+      "ins_s_date": "12/1/2020",
+      "ins_e_date": "6/18/2021",
+      "ins_policy": "05-858-7365",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Ethelbert",
+      "last_name": "Carbett",
+      "gender": "Male",
+      "age": 25,
+      "address": "5165 Veith Terrace",
+      "state": "CA",
+      "zipcode": "92662",
+      "phone": "714-880-3058"
+    },
+    car: [
+      {
+        "vin": "5UXZV8C57D0776029",
+        "make": "Oldsmobile",
+        "model": "88",
+        "year": 1995,
+        "mileage": 79469
+      },
+      {
+        "vin": "WBA5B3C58ED936633",
+        "make": "Mitsubishi",
+        "model": "Pajero",
+        "year": 1996,
+        "mileage": 138138
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$297.80",
+      "ins_s_date": "12/25/2020",
+      "ins_e_date": "6/23/2021",
+      "ins_policy": "99-414-4242",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Fanya",
+      "last_name": "Catcheside",
+      "gender": "Genderfluid",
+      "age": 21,
+      "address": "585 Raven Plaza",
+      "state": "ND",
+      "zipcode": "58122",
+      "phone": "701-161-4464"
+    },
+    car: [
+      {
+        "vin": "WBAKG7C53BE572297",
+        "make": "Oldsmobile",
+        "model": "Cutlass Cruiser",
+        "year": 1994,
+        "mileage": 88982
+      },
+      {
+        "vin": "5N1AT2ML5EC774550",
+        "make": "BMW",
+        "model": "X6 M",
+        "year": 2011,
+        "mileage": 1856
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$145.41",
+      "ins_s_date": "12/23/2020",
+      "ins_e_date": "6/21/2021",
+      "ins_policy": "80-378-1934",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Walker",
+      "last_name": "Hughf",
+      "gender": "Agender",
+      "age": 24,
+      "address": "3082 Maple Drive",
+      "state": "DC",
+      "zipcode": "20525",
+      "phone": "202-245-3357"
+    },
+    car: [
+      {
+        "vin": "WBAEU33445P509143",
+        "make": "Audi",
+        "model": "S4",
+        "year": 1992,
+        "mileage": 21683
+      },
+      {
+        "vin": "WAUFEAFM3CA618453",
+        "make": "Oldsmobile",
+        "model": "Cutlass Cruiser",
+        "year": 1994,
+        "mileage": 137941
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$123.50",
+      "ins_s_date": "12/12/2020",
+      "ins_e_date": "6/25/2021",
+      "ins_policy": "30-933-1250",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Gerry",
+      "last_name": "Tipper",
+      "gender": "Genderqueer",
+      "age": 22,
+      "address": "013 Monica Parkway",
+      "state": "OH",
+      "zipcode": "44111",
+      "phone": "216-504-5036"
+    },
+    car: [
+      {
+        "vin": "3N1CE2CPXEL387513",
+        "make": "BMW",
+        "model": "7 Series",
+        "year": 2002,
+        "mileage": 141721
+      },
+      {
+        "vin": "KMHCM3AC3AU762434",
+        "make": "Jeep",
+        "model": "Commander",
+        "year": 2009,
+        "mileage": 123991
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$266.37",
+      "ins_s_date": "12/22/2020",
+      "ins_e_date": "6/19/2021",
+      "ins_policy": "56-469-4450",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Cassi",
+      "last_name": "Gleasane",
+      "gender": "Genderqueer",
+      "age": 22,
+      "address": "92525 Brentwood Circle",
+      "state": "LA",
+      "zipcode": "70033",
+      "phone": "504-568-3386"
+    },
+    car: [
+      {
+        "vin": "5J8TB4H51GL431651",
+        "make": "Volvo",
+        "model": "S40",
+        "year": 2001,
+        "mileage": 33137
+      },
+      {
+        "vin": "YV1902MD3F1608186",
+        "make": "Volvo",
+        "model": "C70",
+        "year": 2000,
+        "mileage": 142388
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$108.20",
+      "ins_s_date": "12/21/2020",
+      "ins_e_date": "6/15/2021",
+      "ins_policy": "72-758-8045",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Thia",
+      "last_name": "Malling",
+      "gender": "Polygender",
+      "age": 21,
+      "address": "3300 Pearson Lane",
+      "state": "CA",
+      "zipcode": "93311",
+      "phone": "805-664-6749"
+    },
+    car: [
+      {
+        "vin": "1G6AJ5S34E0133649",
+        "make": "Audi",
+        "model": "A8",
+        "year": 2007,
+        "mileage": 68067
+      },
+      {
+        "vin": "WBAVB73528P142348",
+        "make": "Dodge",
+        "model": "Dakota Club",
+        "year": 1996,
+        "mileage": 29458
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$248.58",
+      "ins_s_date": "12/21/2020",
+      "ins_e_date": "6/12/2021",
+      "ins_policy": "52-862-7280",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  },
+  {
+    owner: {
+      "first_name": "Craggie",
+      "last_name": "Spradbery",
+      "gender": "Male",
+      "age": 24,
+      "address": "263 Northfield Avenue",
+      "state": "TN",
+      "zipcode": "38161",
+      "phone": "901-714-6596"
+    },
+    car: [
+      {
+        "vin": "SCFAB223X1K973511",
+        "make": "Toyota",
+        "model": "Avalon",
+        "year": 2001,
+        "mileage": 138158
+      },
+      {
+        "vin": "5UXZV4C52CL785937",
+        "make": "Oldsmobile",
+        "model": "Toronado",
+        "year": 1966,
+        "mileage": 118509
+      }
+    ],
+    ins: {
+      "ins_name": "State Farm",
+      "ins_payment": "$129.89",
+      "ins_s_date": "12/25/2020",
+      "ins_e_date": "6/19/2021",
+      "ins_policy": "63-690-9752",
+      "ins_BIL": "$50000.00",
+      "ins_PDL": "$25000.00",
+      "ins_PIP": "$25000.00",
+      "ins_UMBI": "$50000.00",
+      "ins_UMPD": "$20000.00",
+      "ins_collision": "$500.00",
+      "ins_com": "$500.00"
+    }
+  }
 ]
 
 var insuranceList = [
@@ -234,7 +880,7 @@ mongoose.connect(credentials.connection_string, {
 });
 
 
-//Load our models
+//Load ourmodels
 const Car = require("./models/car.js");
 const Insurance = require("./models/insurance.js");
 const InsuranceDetail = require("./models/insuranceDetail");
@@ -248,9 +894,6 @@ async function loadAllRecords() {
   await Owner.deleteMany();
 
   insuranceRecords = [];
-  carRecords = [];
-  ownerReords = [];
-  insuranceDetail = [];
 
   //Insurance list
   for (let insuranceObject of insuranceList) {
@@ -264,17 +907,15 @@ async function loadAllRecords() {
   //owner & insuranceDetail & car
   for (let item of personInfo) {
     const newOwner = new Owner(item.owner);
-    const newInsuranceDetail = new InsuranceDetail(item.insurance);
+    const newInsuranceDetail = new InsuranceDetail(item.ins);
 
     //refer each other
     newOwner.insuranceDetailID = newInsuranceDetail;
-    newInsuranceDetail.ownerID = newOwner;
 
     //read in car info for owner and insurance
-    for(let i = 0; i < item.cars.length; i++){
-      let newCar = new Car(item.cars[i]);
+    for (let i = 0; i < item.car.length; i++) {
+      let newCar = new Car(item.car[i]);
       newOwner.carID[i] = newCar;
-      newInsuranceDetail.carID[i] = newCar;
       newCar.insuranceDetailID = newInsuranceDetail;
       newCar.ownerID = newOwner;
 
@@ -282,13 +923,13 @@ async function loadAllRecords() {
       await newCar.save();
     }
 
-    if (item.insurance.name === "State Farm") {
+    if (item.ins.ins_name === "State Farm") {
       newOwner.insuranceID = insuranceRecords[0];
     }
-    else if (item.insurance.name === "Geico") {
+    else if (item.ins.ins_name === "Geico") {
       newOwner.insuranceID = insuranceRecords[1];
     }
-    else if (item.insurance.name === "Progressive") {
+    else if (item.ins.ins_name === "Progressive") {
       newOwner.insuranceID = insuranceRecords[2];
     }
 
@@ -304,44 +945,5 @@ async function loadAllRecords() {
 }
 
 
-// async function loadAllRecords() {
-//     //Delete all existing records
-//     await Car.deleteMany();
-//     await Insurance.deleteMany();
-//     await Owner.deleteMany();
 
-//     //Take the teams we have data for and use them to make records with out schema
-//     for (let insuranceObject of insurance) {
-//       //Make a Team from Schema
-//       const newInsurance = new Insurance(insuranceObject);
-//       console.log(newInsurance);
-//       //Save it to mongodb
-//       await newInsurance.save();
-//     }
-
-//     console.log("Done loading insurance");
-
-//     for (let carObject of car) {
-//         //Make a Team from Schema
-//         const newCar = new Car(carObject);
-//         //Save it to mongodb
-//         await newCar.save();
-//       }
-
-//     console.log("Done loading cars");
-
-//     for (let ownerObject of owner) {
-//         //Make a Team from Schema
-//         const newOwner = new Owner(ownerObject);
-//         //Save it to mongodb
-//         await newOwner.save();
-//       }
-
-//       console.log("Done loading owners");
-
-//     //Done with connection, close so program can exit
-//     mongoose.connection.close();
-//   }
-
-//Make it happen
 loadAllRecords();
