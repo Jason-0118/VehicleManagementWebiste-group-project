@@ -14,10 +14,15 @@ var InsuranceDetailSchema = new Schema({
     ins_UMPD: { type: String },
     ins_collision: { type: String },
     ins_com: { type: String },
+    insuranceID: { type: Schema.Types.ObjectId, ref: "Insurance" },
 
     // ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
     // carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
 });
+
+InsuranceDetailSchema.virtual("url").get(function () {
+    return "/ins/detail/id/" + this._id;
+  });
 
 //Export model
 module.exports = mongoose.model("InsuranceDetail", InsuranceDetailSchema);

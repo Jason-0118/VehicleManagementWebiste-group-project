@@ -1,0 +1,13 @@
+<%- include('commonHeader.ejs', {title: 'Insurance List'}); %>
+
+
+  <div class="row mt-4 text-center">
+    <% for (let i of ins) { %>
+      <div class="col-lg-4">
+        <p>
+            <a href="<%- i.url %>" class="btn btn-secondary bg-success"> <%- i.name %> &raquo; </a>
+        </p>
+      </div>
+    <% } %>
+
+  <%- include('commonFooter.ejs'); %>

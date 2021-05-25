@@ -16,5 +16,9 @@ var OwnerSchema = new Schema({
   carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
 });
 
+
+OwnerSchema.virtual("url").get(function () {
+  return "/owner/id/" + this._id;
+});
 //Export model
 module.exports = mongoose.model("Owner", OwnerSchema);

@@ -915,21 +915,31 @@ async function loadAllRecords() {
     //read in car info for owner and insurance
     for (let i = 0; i < item.car.length; i++) {
       let newCar = new Car(item.car[i]);
-      newOwner.carID[i] = newCar;
-      newCar.insuranceDetailID = newInsuranceDetail;
-      newCar.ownerID = newOwner;
+      newOwner.carID[i] = newCar._id;
 
-      //store in DB
+      if (item.ins.ins_name === "State Farm") {
+        newCar.insuranceID = insuranceRecords[0];
+      }
+      else if (item.ins.ins_name === "Geico") {
+        newCar.insuranceID = insuranceRecords[1];
+      }
+      else if (item.ins.ins_name === "Progressive") {
+        newCar.insuranceID = insuranceRecords[2];
+      }
+
       await newCar.save();
     }
 
     if (item.ins.ins_name === "State Farm") {
+      newInsuranceDetail.insuranceID = insuranceRecords[0];
       newOwner.insuranceID = insuranceRecords[0];
     }
     else if (item.ins.ins_name === "Geico") {
+      newInsuranceDetail.insuranceID = insuranceRecords[1];
       newOwner.insuranceID = insuranceRecords[1];
     }
     else if (item.ins.ins_name === "Progressive") {
+      newInsuranceDetail.insuranceID = insuranceRecords[2];
       newOwner.insuranceID = insuranceRecords[2];
     }
 
