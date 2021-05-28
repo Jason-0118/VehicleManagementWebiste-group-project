@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var insRouter = require('./routes/insurance');
+var ownerRouter = require('./routes/owner');
 
 var app = express();
 
@@ -29,6 +30,7 @@ mongoose.connect(credentials.connection_string, {
 
 app.use('/', indexRouter);
 app.use('/ins', insRouter);
+app.use('/owner', ownerRouter);
 
 app.get("*", async (req, res) => {
   res.status = 404;

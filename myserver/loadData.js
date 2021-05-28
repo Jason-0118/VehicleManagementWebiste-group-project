@@ -916,6 +916,7 @@ async function loadAllRecords() {
     for (let i = 0; i < item.car.length; i++) {
       let newCar = new Car(item.car[i]);
       newOwner.carID[i] = newCar._id;
+      newCar.ownerID = newOwner._id;
 
       if (item.ins.ins_name === "State Farm") {
         newCar.insuranceID = insuranceRecords[0];

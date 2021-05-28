@@ -235,3 +235,39 @@ body {
         font-weight: 600
     }
 }
+
+
+.dropdown{
+    position:fixed;
+    display: block;
+    height: 50%;
+    
+   overflow: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: darkblue;
+    padding: 14px 18px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightcyan;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdownbtn {
+    background-color: blue;
+}
+

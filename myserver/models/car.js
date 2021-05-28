@@ -8,8 +8,8 @@ var CarSchema = new Schema({
   year: { type: Number },
   mileage: { type: Number },
   insuranceID: { type: Schema.Types.ObjectId, ref: "Insurance" },
+  ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
 
-  //ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
   //insuranceDetailID: { type: Schema.Types.ObjectId, ref: "InsuranceDetail" },
 
   //will have reference to owner

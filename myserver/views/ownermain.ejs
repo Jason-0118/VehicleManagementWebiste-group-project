@@ -1,0 +1,18 @@
+<%- include('commonHeader.ejs', {title: "Owner Information"}); %>
+
+<div class="text-center padding-lg">
+<h2>Choose an owner to find information for:</h2>
+
+<div class="dropdown align-self-center">
+    <button onclick="getOwnerPage()" style="text-align:center;" class="dropbtn">Hover to choose an owner</button>
+    <div id="selectedowner" class="dropdown-content">
+        <% for (let owner of owners) { %>
+            <a href="/owner/id/<%- owner._id %>"><%- owner.fullname %></a>
+            <% } %>
+    </div>
+  </div>
+</div>
+</main>
+
+<%- include('commonFooter.ejs'); %>
+    

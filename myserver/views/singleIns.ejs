@@ -18,7 +18,7 @@
         <tbody>
             <% for (let i=1; i < members.length; ++i) { %>
                 <tr>
-                    <td><a href="<%- members.rul%>"><%-members[i].first_name %> <%-members[i].last_name %> </a></td>
+                    <td><a href="/owner/id/<%-members[i]._id%>"><%-members[i].fullname %></a></td>
                     <td><%-coverage[i].ins_policy  %></td>
                     <td><%-coverage[i].ins_s_date %></td>
                     <td><%-coverage[i].ins_e_date  %></td>
