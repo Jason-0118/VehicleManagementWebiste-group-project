@@ -848,6 +848,7 @@ var insuranceList = [
     headquarter: "Bloomington, Illinois, United States",
     rank: "#1",
     website: "www.statefarm.com",
+    logo: "https://www.smarthomeamerica.org/assets/uploads/partners/state-farm-logo.png",
     formed: Date.parse("1936"),
     active: true
   },
@@ -857,6 +858,7 @@ var insuranceList = [
     headquarter: "Chevy Chase, Maryland, United States",
     rank: "#2",
     website: "www.geico.com",
+    logo: "https://lh3.googleusercontent.com/proxy/JATNPo2cdjr10zbDyEe8eevQwNSua7Zxw8tRldBOgRlh-yFli-aMwRNLcdKvMeHe1yTjT7xA3uTXXu0YP6r9YmblJgGyX-MRlFVkwgc8F6ONeUODHC0dEXTMsqX0PYR5ZIJYmQ",
     formed: Date.parse("1922"),
     active: true
   },
@@ -866,6 +868,7 @@ var insuranceList = [
     headquarter: "Mayfield Village, Ohio, United States",
     rank: "#3",
     website: "www.progressive.com",
+    logo: "https://www.rightsure.com/images/news/47086/13004/large.d/Progressive_Agent_for_You.v-1560460923.imgix-dz00MzUmcT02NQ__.d.v1560460923.jpg?k=5a1268",
     formed: Date.parse("1937"),
     active: true
   }

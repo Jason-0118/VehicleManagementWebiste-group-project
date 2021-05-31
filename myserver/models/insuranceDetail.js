@@ -20,9 +20,7 @@ var InsuranceDetailSchema = new Schema({
     // carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
 });
 
-InsuranceDetailSchema.virtual("url").get(function () {
-    return "/ins/detail/id/" + this._id;
-  });
+
 
 //Export model
 module.exports = mongoose.model("InsuranceDetail", InsuranceDetailSchema);

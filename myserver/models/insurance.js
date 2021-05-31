@@ -7,6 +7,7 @@ var InsuranceSchema = new Schema({
   headquarter: { type: String },
   rank: { type: String },
   website: { type: String },
+  logo: {type: String},
   formed: { type: Date },
   active: { type: Boolean, required: true, default: true }
   //will have reference to owner and array of cars on insurance policy
