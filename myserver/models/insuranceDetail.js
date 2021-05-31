@@ -15,8 +15,7 @@ var InsuranceDetailSchema = new Schema({
     ins_collision: { type: String },
     ins_com: { type: String },
     insuranceID: { type: Schema.Types.ObjectId, ref: "Insurance" },
-
-    // ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
+    ownerID: { type: Schema.Types.ObjectId, ref: "Owner" },
     // carID: [{ type: Schema.Types.ObjectId, ref: "Car" }],
 });
 

@@ -858,7 +858,7 @@ var insuranceList = [
     headquarter: "Chevy Chase, Maryland, United States",
     rank: "#2",
     website: "www.geico.com",
-    logo: "https://lh3.googleusercontent.com/proxy/JATNPo2cdjr10zbDyEe8eevQwNSua7Zxw8tRldBOgRlh-yFli-aMwRNLcdKvMeHe1yTjT7xA3uTXXu0YP6r9YmblJgGyX-MRlFVkwgc8F6ONeUODHC0dEXTMsqX0PYR5ZIJYmQ",
+    logo: "https://cdn.cheapfullcoverageautoinsurance.com/wp-content/uploads/2019/10/geico.jpg",
     formed: Date.parse("1922"),
     active: true
   },
@@ -914,6 +914,7 @@ async function loadAllRecords() {
 
     //refer each other
     newOwner.insuranceDetailID = newInsuranceDetail;
+    newInsuranceDetail.ownerID = newOwner;
 
     //read in car info for owner and insurance
     for (let i = 0; i < item.car.length; i++) {
