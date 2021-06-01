@@ -931,15 +931,11 @@ async function loadAllRecords() {
         const newOwner = new Owner(item.owner);
         const newInsuranceDetail = new InsuranceDetail(item.ins);
 
-        <<
-        << << < HEAD
         //refer each other
-        newOwner.insuranceDetailID = newInsuranceDetail; ===
-        === =
+        newOwner.insuranceDetailID = newInsuranceDetail; 
         //refer each other
         newOwner.insuranceDetailID = newInsuranceDetail;
-        newInsuranceDetail.ownerID = newOwner; >>>
-        >>> > 0492 b36b399b8e12aa48fda1cb66152adde25382
+        newInsuranceDetail.ownerID = newOwner; 
 
         //read in car info for owner and insurance
         for (let i = 0; i < item.car.length; i++) {
