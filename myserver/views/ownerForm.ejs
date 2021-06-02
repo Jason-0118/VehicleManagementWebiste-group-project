@@ -5,6 +5,8 @@
             <legend>Personal Info</legend>
             <input type="hidden" name="owner_id" value="<%- owner._id%>">
             <input type="hidden" name="insDetail_id" value="<%- insDetail._id%>">
+            <input type="hidden" name="newCar_id" value="<%- newCar._id%>">
+
 
             <div class="mb-3">
                 <label for="first_name" class="form-label">First Name <em>(Required)</em></label>
@@ -170,26 +172,26 @@
             <legend>Car Info</legend>
             <div class="mb-3">
                 <% if(cars.length !== 0 ) { %>
-                    <% for (let c of cars) { %>
+                    <% for (let c=0; c < cars.length; ++c) { %>
                         <div class="mb-3">
                             <label for="vin" class="form-label">#Vin</label>
-                            <input type="text" class="form-control" name="vin" id="vin" value="<%- c.vin%>" >
+                            <input type="text" class="form-control" name="vin<%-c%>" id="vin" value="<%- cars[c].vin%>" >
                         </div>
                         <div class="mb-3">
                             <label for="make" class="form-label">Make</label>
-                            <input type="text" class="form-control" name="make" id="make" value="<%- c.make%>" >
+                            <input type="text" class="form-control" name="make<%-c%>" id="make" value="<%- cars[c].make%>" >
                         </div>
                         <div class="mb-3">
                             <label for="model" class="form-label">Model</label>
-                            <input type="text" class="form-control" name="model" id="model" value="<%- c.model%>" >
+                            <input type="text" class="form-control" name="model<%-c%>" id="model" value="<%- cars[c].model%>" >
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Year</label>
-                            <input type="number" class="form-control" name="year" id="year" value="<%- c.year%>" >
+                            <input type="number" class="form-control" name="year<%-c%>" id="year" value="<%- cars[c].year%>" >
                         </div>
                         <div class="mb-3">
                             <label for="mileage" class="form-label">Mileage</label>
-                            <input type="number" class="form-control" name="mileage" id="mileage" value="<%- c.mileage%>" >
+                            <input type="number" class="form-control" name="mileage<%-c%>" id="mileage" value="<%- cars[c].mileage%>" >
                         </div>
                         <hr>
                     <%}%>
