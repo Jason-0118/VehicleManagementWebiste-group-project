@@ -6,6 +6,7 @@ var insComtrollers = require('../controller/insControllers');
 router.get('/', insComtrollers.list);
 router.get('/id/:id', insComtrollers.peopleList);
 router.get('/detail/:id', insComtrollers.insDetail);
-router.get('/delete/:id', insComtrollers.delete);
+router.get('/update/:id', insComtrollers.update_get);
+router.post('/update/:id', insComtrollers.update_post);
 
 module.exports = router;
