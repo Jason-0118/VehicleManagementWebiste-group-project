@@ -11,10 +11,10 @@ var personInfo = [{
         },
         car: [{
                 "vin": "JN1BY1PPXFM326743",
-                "make": "Toyota",
-                "model": "Camry Solara",
-                "year": 2007,
-                "mileage": 71662,
+                "make": "Tesla",
+                "model": "Model S",
+                "year": 2030,
+                "mileage": 420,
                 "logo": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/white-metallic-fast-sports-car-on-white-background-studio-shiny-michal-bednarek.jpg"
             },
             {
@@ -932,10 +932,10 @@ async function loadAllRecords() {
         const newInsuranceDetail = new InsuranceDetail(item.ins);
 
         //refer each other
-        newOwner.insuranceDetailID = newInsuranceDetail; 
+        newOwner.insuranceDetailID = newInsuranceDetail;
         //refer each other
         newOwner.insuranceDetailID = newInsuranceDetail;
-        newInsuranceDetail.ownerID = newOwner; 
+        newInsuranceDetail.ownerID = newOwner;
 
         //read in car info for owner and insurance
         for (let i = 0; i < item.car.length; i++) {
