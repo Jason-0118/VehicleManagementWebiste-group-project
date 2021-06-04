@@ -241,7 +241,7 @@ body {
     position:fixed;
     display: block;
     height: 50%;
-    
+    text-align: center;
    overflow: auto;
 }
 
@@ -270,4 +270,16 @@ body {
 .dropdown:hover .dropdownbtn {
     background-color: blue;
 }
+
+#ownercreatebtn{
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu-center {
+   padding-bottom: 4%;
+    left: 43%;
+}
+
+
 
