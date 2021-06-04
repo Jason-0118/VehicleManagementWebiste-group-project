@@ -16,40 +16,51 @@ exports.ownersingle = async function (req, res) {
 }
 
 exports.sell_get = async function (req, res, next) {
-    try{
-    let currentTitle = await Cars.findById(req.params.id).exec();
-    let newOwner = new Owners({});
-    let currentOwner = await Owners.findById(currentTitle.ownerID).exec();
-    res.render('sellForm.ejs',{
-        title: 'Sell title',
-        currentTitle: currentTitle,
-        newOwner: newOwner,
-        currentOwner: currentOwner
-    });
-}catch (err) {
-    next(err);
-}
+    try {
+        let currentTitle = await Cars.findById(req.params.id).exec();
+        let newOwner = new Owners({});
+        let currentOwner = await Owners.findById(currentTitle.ownerID).exec();
+        res.render('sellForm.ejs', {
+            title: 'Sell title',
+            currentTitle: currentTitle,
+            newOwner: newOwner,
+            currentOwner: currentOwner
+        });
+    } catch (err) {
+        next(err);
+    }
 }
 
 exports.sell_post = async function (req, res, next) {
-    try {     
-        let newOwner = await Owners.find().where('phone').equals(req.body.phone).exec();
+    try {
+        let newOwner = await Owners.findOne().where('phone').equals(req.body.phone).exec();
         let car = await Cars.findOne().where('vin').equals(req.body.vin).exec();
         let previousOwner = await Owners.findById(req.body.ownerid).exec();
 
-        for(let i = 0; i < previousOwner.carID.length; i++){
-            console.log(previousOwner.carID[i]);
-            console.log(car._id);
-            if(previousOwner.carID[i] === car._id){
-                console.log(car._id);
-                previousOwner.carID[i] = perviousOwner.carID[previousOwner.carID.length - 1];
-                previousOwner.carID.pop();
-            }
+        //delete the car from previousOwner's carID array
+        const index = previousOwner.carID.indexOf(car._id);
+        if (index > -1) {
+            previousOwner.carID.splice(index, 1);
         }
-       // console.log(previousOwner);
+
+
+        console.log("before sell---car=========>", car);
         car.ownerID = newOwner._id;
-       // console.log(car._id);
-        newOwner.carID.push(car._id);
+        console.log("after sell---car=========>", car);
+        await car.save();
+
+        //if alread exist in the array then skip.
+        var exist = newOwner.carID.includes(car._id);
+        if (!exist)
+            newOwner.carID.push(car._id);
+
+        let cars = await Cars.find().where('ownerID').equals(newOwner._id).exec();
+        console.log("old owner=========>", previousOwner);
+        console.log("new owner=========>", newOwner);
+        await newOwner.save();
+        await previousOwner.save();
+
+        res.render('ownersingle.ejs', { owner: newOwner, cars: cars });
 
     } catch (err) {
         next(err);
@@ -59,12 +70,12 @@ exports.sell_post = async function (req, res, next) {
 
 exports.delete = async function (req, res, next) {
     try {
-      await Owners.findByIdAndDelete(req.params.id).exec();
-      res.redirect("/owner");
+        await Owners.findByIdAndDelete(req.params.id).exec();
+        res.redirect("/owner");
     } catch (err) {
-      next(err);
+        next(err);
     }
-  };
+};
 
 exports.create = async function (req, res) {
     try {
