@@ -24,3 +24,12 @@ exports.insDetail = async function (req, res) {
     console.log(owner[0].fullname);
     res.render('insDetail.ejs', { detail: singleInsDetail, owner: owner[0].fullname });
 }
+
+exports.delete = async function (req, res, next) {
+    try {
+      await InsDetail.findByIdAndDelete(req.params.id).exec();
+      res.redirect("/ins");
+    } catch (err) {
+      next(err);
+    }
+  };

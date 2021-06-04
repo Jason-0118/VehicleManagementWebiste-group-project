@@ -21,25 +21,28 @@
 
 <% for (let i=0; i < cars.length; i++) {%>
 <div class="row featurette text-center"> 
-    <!-- <div class="col-md-4 order-md-1">
+    <div class="col-md-4 order-md-1">
       <img
-        src="./images/tesla3.jpg"
-        alt="This is a image of a "
+        src="<%- cars[i].logo %>"
+        alt="This is a image of a <%- cars[i].make %>, <%- cars[i].model %>"
         class="img-fluid"
       />
-    </div> -->
+    </div>
     <div class="col-md-8 order-md-2 align-self-center">
       <div class="right-content">
         <p>Make: <%- cars[i].make %></p>
         <p>Model: <%- cars[i].model %></p>
         <p>Year: <%- cars[i].year %></p>
         <p>Vin: <%- cars[i].vin %></p>
+        <p><a href="/owner/sell/<%-cars[i]._id%>">Click here to sell car</a></p>
+        <p><a href="/delete/<%-cars[i]._id%>"> Click here to delete car title</a></p>
        </div>
     </div>
   </div>
   <hr>
   <% } %>
 
-  <a href="/owner/update/<%-owner._id%>"> Update</a>
+  <a href="/owner/update/<%-owner._id%>"> Update Owner</a>
+  <a href="/owner/delete/<%-owner._id%>"> Delete Owner</a>
 
   <%- include('commonFooter.ejs'); %>

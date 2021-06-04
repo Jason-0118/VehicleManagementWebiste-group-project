@@ -34,6 +34,47 @@ exports.create = async function (req, res) {
     }
 };
 
+exports.sell_get = async function (req, res, next) {
+    try{
+    let currentTitle = await Cars.findById(req.params.id).exec();
+    let newOwner = new Owners({});
+    res.render('sellForm.ejs',{
+        title: 'Sell title',
+        currentTitle: currentTitle,
+        newOwner: newOwner
+    });
+}catch (err) {
+    next(err);
+}
+}
+
+exports.sell_post = async function (req, res, next) {
+    try {
+        
+        let newOwner = await Owners.find().where('phone').equals(req.body.phone).exec();
+        console.log(newOwner);
+        let car = await Cars.find().where('vin').equals(req.body.vin).exec();
+        console.log(car);
+        car.ownerID = "";
+        car.ownerID = newOwner._id;
+        console.log(car);
+        newOwner.carID[carID.length] = car._id;
+        console.log(newOwner);
+    } catch (err) {
+        next(err);
+    }
+
+}
+
+exports.delete = async function (req, res, next) {
+    try {
+      await Owners.findByIdAndDelete(req.params.id).exec();
+      res.redirect("/owner");
+    } catch (err) {
+      next(err);
+    }
+  };
+
 exports.update_get = async function (req, res, next) {
     try {
         let insList = await Insurance.find().select('name').exec();

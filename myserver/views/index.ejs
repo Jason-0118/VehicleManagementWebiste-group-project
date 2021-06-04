@@ -40,7 +40,7 @@
                         <div class="right-content">
                             <table id="tablecar">
                                 <th><a class="text-decoration-none" href="./owner/<%- cars.ownerID %>">Owner</a></th>
-                                <th><a class="text-decoration-none" href="./status.html">Title Status</a></th>
+                                <th><a class="text-decoration-none" href="./owner/sell/<%- cars[i]._id %>">Sell This Tile</a></th>
                                 <th><a class="text-decoration-none" href="/ins">Insurance</a></th>
                                 </tr>
                                 <tr>
@@ -60,6 +60,8 @@
                                     </td>
                                     <td>Mileage:
                                         <%- cars[i].mileage %>
+                                    </td>
+                                    <td><a href="/delete/<%-cars[i]._id%>"> Click here to delete car title</a>
                                     </td>
                                 </tr>
                             </table>

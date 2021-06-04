@@ -13,3 +13,12 @@ exports.index = async function(req, res) {
     res.render('index.ejs', { cars, Toyota: ToyotaArray.length, Mazda: MazdaArray.length, Oldsmobile: OldsmobileArray.length });
 
 }
+
+exports.delete = async function (req, res, next) {
+    try {
+      await Cars.findByIdAndDelete(req.params.id).exec();
+      res.redirect("/");
+    } catch (err) {
+      next(err);
+    }
+  };
