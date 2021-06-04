@@ -11,8 +11,60 @@ exports.ownermain = async function (req, res) {
 exports.ownersingle = async function (req, res) {
     let owner = await Owners.findById(req.params.id).exec();
     let cars = await Cars.find().where('ownerID').equals(req.params.id).exec();
+    console.log(owner);
     res.render('ownersingle.ejs', { owner: owner, cars: cars });
 }
+
+exports.sell_get = async function (req, res, next) {
+    try{
+    let currentTitle = await Cars.findById(req.params.id).exec();
+    let newOwner = new Owners({});
+    let currentOwner = await Owners.findById(currentTitle.ownerID).exec();
+    res.render('sellForm.ejs',{
+        title: 'Sell title',
+        currentTitle: currentTitle,
+        newOwner: newOwner,
+        currentOwner: currentOwner
+    });
+}catch (err) {
+    next(err);
+}
+}
+
+exports.sell_post = async function (req, res, next) {
+    try {     
+        let newOwner = await Owners.find().where('phone').equals(req.body.phone).exec();
+        let car = await Cars.findOne().where('vin').equals(req.body.vin).exec();
+        let previousOwner = await Owners.findById(req.body.ownerid).exec();
+
+        for(let i = 0; i < previousOwner.carID.length; i++){
+            console.log(previousOwner.carID[i]);
+            console.log(car._id);
+            if(previousOwner.carID[i] === car._id){
+                console.log(car._id);
+                previousOwner.carID[i] = perviousOwner.carID[previousOwner.carID.length - 1];
+                previousOwner.carID.pop();
+            }
+        }
+       // console.log(previousOwner);
+        car.ownerID = newOwner._id;
+       // console.log(car._id);
+        newOwner.carID.push(car._id);
+
+    } catch (err) {
+        next(err);
+    }
+
+}
+
+exports.delete = async function (req, res, next) {
+    try {
+      await Owners.findByIdAndDelete(req.params.id).exec();
+      res.redirect("/owner");
+    } catch (err) {
+      next(err);
+    }
+  };
 
 exports.create = async function (req, res) {
     try {
@@ -33,47 +85,6 @@ exports.create = async function (req, res) {
         next(err);
     }
 };
-
-exports.sell_get = async function (req, res, next) {
-    try{
-    let currentTitle = await Cars.findById(req.params.id).exec();
-    let newOwner = new Owners({});
-    res.render('sellForm.ejs',{
-        title: 'Sell title',
-        currentTitle: currentTitle,
-        newOwner: newOwner
-    });
-}catch (err) {
-    next(err);
-}
-}
-
-exports.sell_post = async function (req, res, next) {
-    try {
-        
-        let newOwner = await Owners.find().where('phone').equals(req.body.phone).exec();
-        console.log(newOwner);
-        let car = await Cars.find().where('vin').equals(req.body.vin).exec();
-        console.log(car);
-        car.ownerID = "";
-        car.ownerID = newOwner._id;
-        console.log(car);
-        newOwner.carID[carID.length] = car._id;
-        console.log(newOwner);
-    } catch (err) {
-        next(err);
-    }
-
-}
-
-exports.delete = async function (req, res, next) {
-    try {
-      await Owners.findByIdAndDelete(req.params.id).exec();
-      res.redirect("/owner");
-    } catch (err) {
-      next(err);
-    }
-  };
 
 exports.update_get = async function (req, res, next) {
     try {

@@ -3,6 +3,8 @@
 <h1>Who are you selling the <%- currentTitle.make %> <%- currentTitle.model %> to?</h1>
 
 <form method="POST" action="/owner/sell/<%- currentTitle._id%>">
+    <input type="hidden" name="ownerid" value="<%- currentOwner._id %>" >
+    <input type="hidden" name="carid" value="<%- currentTitle._id %>" >
     <div class="mb-3">
         <label for="firstname" class="form-label">Enter first name of buyer:</label>
         <input type="text" class="form-control" name="firstname" id="firstname" value="<%- newOwner.first_name %>" required>
