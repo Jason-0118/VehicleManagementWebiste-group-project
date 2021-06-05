@@ -175,22 +175,26 @@ exports.update_post = async function (req, res, next) {
             //     cars[c].insuranceID = req.body.insuranceID;
             //     await cars[c].save();
             // }
-            cars[0].vin = req.body.vin0;
-            cars[0].make = req.body.make0;
-            cars[0].model = req.body.model0;
-            cars[0].year = req.body.year0;
-            cars[0].mileage = req.body.mileage0;
-            cars[0].ownerID = owner._id;
-            cars[0].insuranceID = req.body.insuranceID;
-            await cars[0].save();
-            cars[1].vin = req.body.vin1;
-            cars[1].make = req.body.make1;
-            cars[1].model = req.body.model1;
-            cars[1].year = req.body.year1;
-            cars[1].mileage = req.body.mileage1;
-            cars[1].ownerID = owner._id;
-            cars[1].insuranceID = req.body.insuranceID;
-            await cars[1].save();
+            if (cars[0] !== undefined) {
+                cars[0].vin = req.body.vin0;
+                cars[0].make = req.body.make0;
+                cars[0].model = req.body.model0;
+                cars[0].year = req.body.year0;
+                cars[0].mileage = req.body.mileage0;
+                cars[0].ownerID = owner._id;
+                cars[0].insuranceID = req.body.insuranceID;
+                await cars[0].save();
+            }
+            if (cars[1] !== undefined) {
+                cars[1].vin = req.body.vin1;
+                cars[1].make = req.body.make1;
+                cars[1].model = req.body.model1;
+                cars[1].year = req.body.year1;
+                cars[1].mileage = req.body.mileage1;
+                cars[1].ownerID = owner._id;
+                cars[1].insuranceID = req.body.insuranceID;
+                await cars[1].save();
+            }
             if (cars[2] !== undefined) {
                 cars[2].vin = req.body.vin2;
                 cars[2].make = req.body.make2;
@@ -230,7 +234,8 @@ exports.update_post = async function (req, res, next) {
         }
         await owner.save();
         await insDetail.save();
-        res.render('ownersingle.ejs', { owner: owner, cars: cars });
+        let updatedCars = await Cars.find().where('ownerID').equals(req.body.owner_id).exec();
+        res.render('ownersingle.ejs', { owner: owner, cars: updatedCars });
 
 
     } catch (err) {
