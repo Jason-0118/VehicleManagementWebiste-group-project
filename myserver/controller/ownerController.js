@@ -226,6 +226,9 @@ exports.update_post = async function (req, res, next) {
             newCar.model = req.body.newModel;
             newCar.year = req.body.newYear;
             newCar.mileage = req.body.newMileage;
+            if (req.body.newLogo !== "") {
+                newCar.logo = req.body.newLogo;
+            }
             newCar.ownerID = owner._id;
             newCar.insuranceID = req.body.insuranceID;
             owner.carID.push(newCar._id);
