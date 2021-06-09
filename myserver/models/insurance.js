@@ -10,7 +10,6 @@ var InsuranceSchema = new Schema({
   logo: {type: String},
   formed: { type: Date },
   active: { type: Boolean, required: true, default: true }
-  //will have reference to owner and array of cars on insurance policy
 });
 
 InsuranceSchema.virtual("url").get(function () {
