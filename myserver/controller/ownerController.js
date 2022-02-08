@@ -165,16 +165,6 @@ exports.update_post = async function (req, res, next) {
         insDetail.insuranceID = req.body.insuranceID;
 
         if (cars.length > 0) {
-            // for (let c = 0; c < cars.length; ++c) {
-            //     cars[c].vin = req.body.vin + `${c}`;
-            //     cars[c].make = req.body.make + `${c}`;
-            //     cars[c].model = req.body.model + `${c}`;
-            //     cars[c].year = req.body.year + `${c}`;
-            //     cars[c].mileage = req.body.mileage + `${c}`;
-            //     cars[c].ownerID = owner._id;
-            //     cars[c].insuranceID = req.body.insuranceID;
-            //     await cars[c].save();
-            // }
             if (cars[0] !== undefined) {
                 cars[0].vin = req.body.vin0;
                 cars[0].make = req.body.make0;
@@ -239,8 +229,6 @@ exports.update_post = async function (req, res, next) {
         await insDetail.save();
         let updatedCars = await Cars.find().where('ownerID').equals(req.body.owner_id).exec();
         res.render('ownersingle.ejs', { owner: owner, cars: updatedCars });
-
-
     } catch (err) {
         next(err);
     }

@@ -877,7 +877,7 @@ var insuranceList = [{
     headquarter: "Chevy Chase, Maryland, United States",
     rank: "#2",
     website: "www.geico.com",
-    logo: "https://lh3.googleusercontent.com/proxy/ES0EeNq1v2w7zAKMR2pzinUG_vSB1zLN-RZ64-Q2zXAXP1j9WSsNWtxzBYrWK7sSkxh5v2H8bHET3GP8yi9MqeWfjOl5HqkHc81DVSkojEqeF1RcHbU5oGyjZ4_n0CRDOgGnIQ",
+    logo: "http://firststateupdate.com/wp-content/uploads/2020/04/img_5e8e2481eecd9-735x400.png",
     formed: Date.parse("1922"),
     active: true
 },
